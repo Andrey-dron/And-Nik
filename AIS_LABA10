@@ -5,3 +5,9 @@
 + Редактирую файл vars: nano vars
 + source ./vars
 + ./clean-all
+Сертификат: . /build-ca
+Генерирую ключ сервера : ./build-key-server server
+Пароль на сертификат сервера
+Build dh
+openvpn --genkey --secret /etc/openvpn/easy-rsa/keys/ta.key - tls
+cp server.crt server.key ca.crt dh2048.pem ta.key /etc/openvpn
